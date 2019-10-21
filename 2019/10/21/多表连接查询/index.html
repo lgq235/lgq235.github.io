@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分组查询 | Hexo</title>
+  <title>多表连接查询 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="所有同学的年龄总和SELECT SUM(age) from s_stu;所有男生的平均年龄SELECT AVG(age) from s_stu where sex = ‘男’;所有女生中年龄最小的多大SELECT MIN(age) from s_stu where sex = ‘女’;所有女生中年龄最大的多大SELECT max(age) from s_stu WHERE sex = ‘女’男生的">
+  <meta name="description" content="SELECT *FROM one,tea WHERE id=tea.id1;SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分组查询">
-<meta property="og:url" content="http://yoursite.com/2019/10/18/分组查询/index.html">
+<meta property="og:title" content="多表连接查询">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/多表连接查询/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="所有同学的年龄总和SELECT SUM(age) from s_stu;所有男生的平均年龄SELECT AVG(age) from s_stu where sex = ‘男’;所有女生中年龄最小的多大SELECT MIN(age) from s_stu where sex = ‘女’;所有女生中年龄最大的多大SELECT max(age) from s_stu WHERE sex = ‘女’男生的">
+<meta property="og:description" content="SELECT *FROM one,tea WHERE id=tea.id1;SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-18T02:23:05.090Z">
+<meta property="og:updated_time" content="2019-10-21T06:58:54.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分组查询">
-<meta name="twitter:description" content="所有同学的年龄总和SELECT SUM(age) from s_stu;所有男生的平均年龄SELECT AVG(age) from s_stu where sex = ‘男’;所有女生中年龄最小的多大SELECT MIN(age) from s_stu where sex = ‘女’;所有女生中年龄最大的多大SELECT max(age) from s_stu WHERE sex = ‘女’男生的">
+<meta name="twitter:title" content="多表连接查询">
+<meta name="twitter:description" content="SELECT *FROM one,tea WHERE id=tea.id1;SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,27 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-分组查询" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-多表连接查询" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分组查询
+      多表连接查询
     </h1>
   
 
         
-        <a href="/2019/10/18/分组查询/" class="archive-article-date">
-  	<time datetime="2019-10-18T02:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
+        <a href="/2019/10/21/多表连接查询/" class="archive-article-date">
+  	<time datetime="2019-10-21T06:58:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>所有同学的年龄总和<br>SELECT SUM(age) from s_stu;<br>所有男生的平均年龄<br>SELECT AVG(age) from s_stu where sex = ‘男’;<br>所有女生中年龄最小的多大<br>SELECT MIN(age) from s_stu where sex = ‘女’;<br>所有女生中年龄最大的多大<br>SELECT max(age) from s_stu WHERE sex = ‘女’<br>男生的数量<br>SELECT count(1) from s_stu WHERE sex = ‘男’;<br>查询男生和女生的总数<br>SELECT count(*),sex FROM s_stu group by sex;<br>查询每个年龄段的人数<br>SELECT count(1),age from s_stu group by age;<br>查询男生和女生中最小的年龄<br>SELECT min(age) from s_stu group by sex;<br>查询男生和女生的年龄大于15的人数，只保留人数大于3的；<br>SELECT count(1),sex FROM s_stu WHERE age &gt; 15  GROUP BY sex HAVING count(1) &gt;= 3;</p>
+        <p>SELECT *FROM one,tea WHERE id=tea.id1;<br>SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;</p>
 
       
 
@@ -254,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/18/分组查询/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/多表连接查询/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/21/多表连接查询/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          多表连接查询
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/17/课后练习题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">课后练习题</div>
+    <a href="/2019/10/18/分组查询/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">分组查询</div>
       <i class="icon-circle-right"></i>
     </a>
   
