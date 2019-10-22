@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>多表连接查询 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SELECT *FROM one,tea WHERE id=tea.id1;SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;">
+  <meta name="description" content="联合查询SELECT t1.id,t1. name,t2. name FROM s_stu t1,tea t2 WHERE t1.teaid = t2.id AND t1.id = 3;内连接SELECT t1.id,t1. name,t2. name FROM s_stu t1 INNER JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 3;左外链接SEL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多表连接查询">
-<meta property="og:url" content="http://yoursite.com/2019/10/21/多表连接查询/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/连接查询-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="SELECT *FROM one,tea WHERE id=tea.id1;SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;">
+<meta property="og:description" content="联合查询SELECT t1.id,t1. name,t2. name FROM s_stu t1,tea t2 WHERE t1.teaid = t2.id AND t1.id = 3;内连接SELECT t1.id,t1. name,t2. name FROM s_stu t1 INNER JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 3;左外链接SEL">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-21T06:58:54.784Z">
+<meta property="og:updated_time" content="2019-10-22T03:29:26.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多表连接查询">
-<meta name="twitter:description" content="SELECT *FROM one,tea WHERE id=tea.id1;SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;">
+<meta name="twitter:description" content="联合查询SELECT t1.id,t1. name,t2. name FROM s_stu t1,tea t2 WHERE t1.teaid = t2.id AND t1.id = 3;内连接SELECT t1.id,t1. name,t2. name FROM s_stu t1 INNER JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 3;左外链接SEL">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,7 +154,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-多表连接查询" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-连接查询-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -166,15 +166,15 @@
   
 
         
-        <a href="/2019/10/21/多表连接查询/" class="archive-article-date">
-  	<time datetime="2019-10-21T06:58:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
+        <a href="/2019/10/22/连接查询-1/" class="archive-article-date">
+  	<time datetime="2019-10-22T03:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SELECT *FROM one,tea WHERE id=tea.id1;<br>SELECT t1.name,t2.teaname FROM one t1,tea t2 WHERE t1.id=t2.id1;</p>
+        <p>联合查询<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1,tea t2 WHERE t1.teaid = t2.id AND t1.id = 3;<br>内连接<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1 INNER JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 3;<br>左外链接<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1 LEFT JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 1;<br>右外链接<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1 right JOIN tea t2 ON t1.teaid = t2.id;<br>全连接<br>SELECT t1.id,t1.name,t2.name FROM s_stu t1 FULL JOIN tea t2 ON t1.teaid = t2.id;<br>交叉连接<br>SELECT t1.id,t1.name,t2.name FROM s_stu t1 cross JOIN tea t2 ON t1.teaid = t2.id;</p>
 
       
 
@@ -254,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/多表连接查询/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/22/连接查询-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/22/连接查询-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          多表连接查询
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/18/分组查询/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">分组查询</div>
+    <a href="/2019/10/21/多表连接查询/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多表连接查询</div>
       <i class="icon-circle-right"></i>
     </a>
   

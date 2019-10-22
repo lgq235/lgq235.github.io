@@ -152,6 +152,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-连接查询-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/22/连接查询-1/">多表连接查询</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/22/连接查询-1/" class="archive-article-date">
+  	<time datetime="2019-10-22T03:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>联合查询<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1,tea t2 WHERE t1.teaid = t2.id AND t1.id = 3;<br>内连接<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1 INNER JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 3;<br>左外链接<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1 LEFT JOIN tea t2 ON t1.teaid = t2.id AND t1.id = 1;<br>右外链接<br>SELECT t1.id,t1. name,t2. name FROM s_stu t1 right JOIN tea t2 ON t1.teaid = t2.id;<br>全连接<br>SELECT t1.id,t1.name,t2.name FROM s_stu t1 FULL JOIN tea t2 ON t1.teaid = t2.id;<br>交叉连接<br>SELECT t1.id,t1.name,t2.name FROM s_stu t1 cross JOIN tea t2 ON t1.teaid = t2.id;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/22/连接查询-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-多表连接查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
