@@ -152,7 +152,7 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="“w-登录注册" class="article article-type-“w  article-index" itemscope itemprop="blogPost">
+    <article id="post-登录注册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -165,14 +165,23 @@
 
         
         <a href="/2019/11/04/登录注册/" class="archive-article-date">
-  	<time datetime="2019-11-04T14:25:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+  	<time datetime="2019-11-04T14:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>public class one extends HttpServlet{<br>    @Override<br>    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</p>
+<pre><code>    resp.setContentType(&quot;text/html;charset=utf-8&quot;);
+    req.setCharacterEncoding(&quot;UTF-8&quot;);
+    PrintWriter out=resp.getWriter();
+    String name=req.getParameter(&quot;username&quot;);
+    String password=req.getParameter(&quot;password&quot;);
+    out.println(&quot;账号:&amp;nbsp;&quot;+name+&quot;&lt;br/&gt;&quot;);
+    out.println(&quot;密码:&amp;nbsp;&quot;+password);
+}</code></pre><p>}</p>
+
       
 
       
