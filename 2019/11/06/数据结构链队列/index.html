@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>数据结构链队列 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="//链队列#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;malloc.h&amp;gt;typedef struct queuenode{    int data;    struct queuenode *next;}QueueNode;//存放结点的信息 typedef struct{    QueueNode *front;//队头指针    QueueNode *rear;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构链队列">
+<meta property="og:url" content="http://yoursite.com/2019/11/06/数据结构链队列/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="//链队列#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;malloc.h&amp;gt;typedef struct queuenode{    int data;    struct queuenode *next;}QueueNode;//存放结点的信息 typedef struct{    QueueNode *front;//队头指针    QueueNode *rear;">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-06T08:17:14.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="数据结构链队列">
+<meta name="twitter:description" content="//链队列#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;malloc.h&amp;gt;typedef struct queuenode{    int data;    struct queuenode *next;}QueueNode;//存放结点的信息 typedef struct{    QueueNode *front;//队头指针    QueueNode *rear;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,292 +154,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-数据结构链队列" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      数据结构链队列
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/06/数据结构链队列/" class="archive-article-date">
+
+        
+        <a href="/2019/11/06/数据结构链队列/" class="archive-article-date">
   	<time datetime="2019-11-06T08:16:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/06/数据结构链队列/">数据结构链队列</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>//链队列<br>#include&lt;stdio.h&gt;<br>#include&lt;malloc.h&gt;<br>typedef struct queuenode<br>{<br>    int data;<br>    struct queuenode *next;<br>}QueueNode;//存放结点的信息</p>
+<p>typedef struct<br>{<br>    QueueNode *front;//队头指针<br>    QueueNode *rear;//队尾指针<br>}LinkQueue;//与队列有关</p>
+<p>//初始化队列<br>void InitQueue(LinkQueue *q)<br>{<br>    q-&gt;front=q-&gt;rear=NULL;<br>}<br>//<br> int QueueEmpty(LinkQueue *q)<br>{<br>    return q-&gt;front==NULL;<br>}</p>
+<p> //入队列<br> int EnQueue(LinkQueue *q,int x)<br>{<br>     QueueNode *p;<br>    p=(QueueNode *)malloc(sizeof(QueueNode));<br>    p-&gt;data=x;<br>    p-&gt;next=NULL;<br>    if(q-&gt;front==NULL){ //队列为空队列时，插入一个结点p<br>        q-&gt;front=q-&gt;rear=p;<br>    }else{<br>        q-&gt;rear-&gt;next=p;<br>        q-&gt;rear=p;<br>    }<br>    return 1;<br>}<br>//出队列<br> int DeQueue(LinkQueue *q,int *x)<br> {<br> QueueNode *p;<br> if(QueueEmpty(q)){<br> printf(“\n队空”);<br> return 0;<br> }<br> p=q-&gt;front;<br> *x=p-&gt;data;<br> q-&gt;front=p-&gt;next;<br> if(q-&gt;rear=p){<br> q-&gt;rear=NULL;<br> }<br> free(p);<br> return 1;<br> }<br> //取队头元素<br>int QueueFront(LinkQueue *q,int *x)<br> {<br>if(QueueEmpty(q)){<br> printf(“\n队空”);<br> return 0;<br> }<br>*x=q-&gt;front-&gt;data;<br>return 1;<br>}<br>void main(){<br>LinkQueue q;<br>int a,i,x,z;<br>InitQueue(&amp;q);<br>for(i=0;i&lt;5;i++){<br>printf(“请输入第%d个元素: “,i+1);<br>scanf(“%d”,&amp;a);<br>EnQueue(&amp;q,a);<br>}<br>printf(“\n出队列的元素: “);<br>DeQueue(&amp;q,&amp;x);<br>printf(“%d\n”,x);<br>printf(“\n此时队头的元素为: “);<br>QueueFront(&amp;q,&amp;z);<br>printf(“%d\n”,z);<br>}</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/06/数据结构链队列/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/04/“登录注册/" class="archive-article-date">
-  	<time datetime="2019-11-04T14:47:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/04/“登录注册/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">登录注册</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/04/“登录注册/">登录注册</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/25/索引和事务/" class="archive-article-date">
-  	<time datetime="2019-10-25T01:37:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/25/索引和事务/">索引和事务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/23/子查询/" class="archive-article-date">
-  	<time datetime="2019-10-23T10:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/23/子查询/">子查询</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/连接查询-1/" class="archive-article-date">
-  	<time datetime="2019-10-22T03:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/连接查询-1/">多表连接查询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/多表连接查询/" class="archive-article-date">
-  	<time datetime="2019-10-21T06:58:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/多表连接查询/">多表连接查询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/18/分组查询/" class="archive-article-date">
-  	<time datetime="2019-10-18T02:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/18/分组查询/">分组查询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/课后练习题/" class="archive-article-date">
-  	<time datetime="2019-10-17T12:24:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/课后练习题/">课后练习题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/16/查询/" class="archive-article-date">
-  	<time datetime="2019-10-16T08:56:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/16/查询/">查询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-10T12:37:18.430Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -458,8 +329,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

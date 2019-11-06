@@ -152,6 +152,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据结构链队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/数据结构链队列/">数据结构链队列</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/数据结构链队列/" class="archive-article-date">
+  	<time datetime="2019-11-06T08:16:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>//链队列<br>#include&lt;stdio.h&gt;<br>#include&lt;malloc.h&gt;<br>typedef struct queuenode<br>{<br>    int data;<br>    struct queuenode *next;<br>}QueueNode;//存放结点的信息</p>
+<p>typedef struct<br>{<br>    QueueNode *front;//队头指针<br>    QueueNode *rear;//队尾指针<br>}LinkQueue;//与队列有关</p>
+<p>//初始化队列<br>void InitQueue(LinkQueue *q)<br>{<br>    q-&gt;front=q-&gt;rear=NULL;<br>}<br>//<br> int QueueEmpty(LinkQueue *q)<br>{<br>    return q-&gt;front==NULL;<br>}</p>
+<p> //入队列<br> int EnQueue(LinkQueue *q,int x)<br>{<br>     QueueNode *p;<br>    p=(QueueNode *)malloc(sizeof(QueueNode));<br>    p-&gt;data=x;<br>    p-&gt;next=NULL;<br>    if(q-&gt;front==NULL){ //队列为空队列时，插入一个结点p<br>        q-&gt;front=q-&gt;rear=p;<br>    }else{<br>        q-&gt;rear-&gt;next=p;<br>        q-&gt;rear=p;<br>    }<br>    return 1;<br>}<br>//出队列<br> int DeQueue(LinkQueue *q,int *x)<br> {<br> QueueNode *p;<br> if(QueueEmpty(q)){<br> printf(“\n队空”);<br> return 0;<br> }<br> p=q-&gt;front;<br> *x=p-&gt;data;<br> q-&gt;front=p-&gt;next;<br> if(q-&gt;rear=p){<br> q-&gt;rear=NULL;<br> }<br> free(p);<br> return 1;<br> }<br> //取队头元素<br>int QueueFront(LinkQueue *q,int *x)<br> {<br>if(QueueEmpty(q)){<br> printf(“\n队空”);<br> return 0;<br> }<br>*x=q-&gt;front-&gt;data;<br>return 1;<br>}<br>void main(){<br>LinkQueue q;<br>int a,i,x,z;<br>InitQueue(&amp;q);<br>for(i=0;i&lt;5;i++){<br>printf(“请输入第%d个元素: “,i+1);<br>scanf(“%d”,&amp;a);<br>EnQueue(&amp;q,a);<br>}<br>printf(“\n出队列的元素: “);<br>DeQueue(&amp;q,&amp;x);<br>printf(“%d\n”,x);<br>printf(“\n此时队头的元素为: “);<br>QueueFront(&amp;q,&amp;z);<br>printf(“%d\n”,z);<br>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/数据结构链队列/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-“登录注册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
